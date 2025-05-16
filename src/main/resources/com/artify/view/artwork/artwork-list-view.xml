@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
+      title="msg://artworkListView.title"
+      focusComponent="artworksDataGrid">
+    <data>
+        <collection id="artworksDc"
+                    class="com.artify.entity.Artwork">
+            <fetchPlan extends="_base">
+                <property name="author" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="artworksDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Artwork e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <urlQueryParameters>
+            <genericFilter component="genericFilter"/>
+            <pagination component="pagination"/>
+        </urlQueryParameters>
+    </facets>
+    <actions>
+        <action id="selectAction" type="lookup_select"/>
+        <action id="discardAction" type="lookup_discard"/>
+    </actions>
+    <layout>
+        <genericFilter id="genericFilter"
+                       dataLoader="artworksDl">
+            <properties include=".*"/>
+        </genericFilter>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="createButton" action="artworksDataGrid.createAction"/>
+            <button id="editButton" action="artworksDataGrid.editAction"/>
+            <button id="removeButton" action="artworksDataGrid.removeAction"/>
+            <simplePagination id="pagination" dataLoader="artworksDl"/>
+        </hbox>
+        <dataGrid id="artworksDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="artworksDc"
+                  columnReorderingAllowed="true">
+            <actions>
+                <action id="createAction" type="list_create"/>
+                <action id="editAction" type="list_edit"/>
+                <action id="removeAction" type="list_remove"/>
+            </actions>
+            <columns resizable="true">
+                <column property="title"/>
+                <column property="description"/>
+                <column property="image"/>
+                <column property="author"/>
+                <column property="uploudDate"/>
+                <column property="price"/>
+                <column property="id"/>
+            </columns>
+        </dataGrid>
+        <hbox id="lookupActions" visible="false">
+            <button id="selectButton" action="selectAction"/>
+            <button id="discardButton" action="discardAction"/>
+        </hbox>
+    </layout>
+</view>

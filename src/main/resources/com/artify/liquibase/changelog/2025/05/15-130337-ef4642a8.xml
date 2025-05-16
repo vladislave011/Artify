@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="artify">
+        <addColumn tableName="ARTWORK">
+            <column name="UPLOAD_DATE" remarks="Дата загрузки" type="DATETIME"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="2" author="artify">
+        <dropTable cascadeConstraints="true" tableName="FLOWUI_FILTER_CONFIGURATION"/>
+    </changeSet>
+    <changeSet id="3" author="artify">
+        <dropTable cascadeConstraints="true" tableName="FLOWUI_USER_SETTINGS"/>
+    </changeSet>
+    <changeSet id="4" author="artify">
+        <dropColumn columnName="UPLOUD_DATE" tableName="ARTWORK"/>
+    </changeSet>
+    <changeSet id="5" author="artify">
+        <modifyDataType columnName="DESCRIPTION" newDataType="CLOB" tableName="ARTWORK"/>
+    </changeSet>
+</databaseChangeLog>

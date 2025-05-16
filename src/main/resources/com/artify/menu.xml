@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/flowui/menu">
+
+    <menu id="application" title="msg://com.artify/menu.application.title" opened="true">
+        <item view="User.list" title="msg://com.artify.view.user/UserListView.title"/>
+        <item view="Artwork.list" title="msg://com.artify.view.artwork/artworkListView.title"/>
+        <item view="Category.list" title="msg://com.artify.view.category/categoryListView.title"/>
+        <item view="Comment_.list" title="msg://com.artify.view.comment/commentListView.title"/>
+        <item view="Tag.list" title="msg://com.artify.view.tag/tagListView.title"/>
+        <item view="Homeview" title="msg://com.artify.view.home/homeview.title"/>
+    </menu>
+
+</menu-config>
