@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:vc="http://yourcompany.com/schema/artify/component"
+            xmlns:j="http://jmix.io/schema/flowui/view"
+            targetNamespace="http://yourcompany.com/schema/artify/component"
+            elementFormDefault="qualified">
+
+    <!-- Базовый тип для всех ваших компонентов -->
+    <xsd:complexType name="ComponentType">
+        <xsd:sequence>
+            <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="http://jmix.io/schema/flowui/view http://yourcompany.com/schema/artify/component"/>
+        </xsd:sequence>
+        <xsd:anyAttribute namespace="##any"/>
+    </xsd:complexType>
+
+    <!-- Компонент verticalLayout -->
+    <xsd:element name="verticalLayout" type="ComponentType"/>
+
+    <!-- Компонент flexLayout -->
+    <xsd:element name="flexLayout" type="ComponentType"/>
+
+</xsd:schema>

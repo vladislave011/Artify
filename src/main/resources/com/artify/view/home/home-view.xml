@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <view xmlns="http://jmix.io/schema/flowui/view"
-      xmlns:vc="C:/projects/jmix/artify/component/component.x"
+      xmlns:vc="http://yourcompany.com/schema/artify/component"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://jmix.io/schema/flowui/view https://jmix.io/schema/flowui/view/view.xsd"
+      xsi:schemaLocation="
+          http://jmix.io/schema/flowui/view https://jmix.io/schema/flowui/view/view.xsd
+          http://yourcompany.com/schema/artify/component file:/component/component.xsd"
       title="Главная страница">
 
-    <vc:verticalLayout padding="true" spacing="true" width="100%">
+    <layout padding="true" spacing="true" width="100%">
         <vc:flexLayout id="artworkCards" width="100%" wrap="wrap" style="gap: 20px;" />
-    </vc:verticalLayout>
+    </layout>
 
 </view>
