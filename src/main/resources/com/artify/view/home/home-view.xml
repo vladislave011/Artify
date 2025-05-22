@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <view xmlns="http://jmix.io/schema/flowui/view"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://jmix.io/schema/flowui/view https://jmix.io/schema/flowui/view/view.xsd"
-          title="Главная страница">
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:vc="C:/projects/jmix/artify/component/component.x"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://jmix.io/schema/flowui/view https://jmix.io/schema/flowui/view/view.xsd"
+      title="Главная страница">
 
-        <layout padding="true" spacing="true">
-            <flexLayout id="artworkCards" width="100%" />
-        </layout>
-    </view>
+    <vc:verticalLayout padding="true" spacing="true" width="100%">
+        <vc:flexLayout id="artworkCards" width="100%" wrap="wrap" style="gap: 20px;" />
+    </vc:verticalLayout>
+
+</view>
